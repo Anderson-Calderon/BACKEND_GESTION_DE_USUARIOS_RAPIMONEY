@@ -6,7 +6,7 @@ const connectDB = ()=>{
 
    
     // Create a database instance with the file "rapioney-db.db"
-    const db = new sqlite3.Database("./rapimoney-db.db",sqlite3.OPEN_READWRITE , (err)=>{
+    const db = new sqlite3.Database("../rapimoney-db.db",sqlite3.OPEN_READWRITE , (err)=>{
 
         // Handle connection errors
         if(err){
