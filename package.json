@@ -1,0 +1,27 @@
+{
+  "name": "backend-gestion-de-usuarios-rapimoney",
+  "version": "1.0.0",
+  "description": "Backend management of rapimoney users",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "Node",
+    "Express",
+    "SQLite"
+  ],
+  "author": "Anderson Calderón Campos",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
