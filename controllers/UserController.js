@@ -20,11 +20,22 @@ const getUsers = async (req,res)=>{
                 // Extract query parameters from request
                 const{numberUsers , offset} = req.query;
 
+                console.log(numberUsers , offset);
+
                 // Connect to database
                 db = connectDB();   
 
+                console.log(db);
+
+                if(db){
+                    console.log("instamcia db existe");
+                    console.log(db);
+
+                }
+
                 // SQL query to get users with limit and offset
                 let sql = "SELECT  * FROM clientes ORDER BY id ASC   LIMIT ? OFFSET ?  ";
+
 
                 // Run the query and get the results using a promise
                 const users = await new Promise((resolve,reject)=>{
@@ -32,6 +43,8 @@ const getUsers = async (req,res)=>{
                     db.all(sql, [numberUsers,offset] , (err,rows) =>{
 
                         if(err){
+
+                            console.log("error ?");
                             //Response in case of an error when making the query
                             reject(err);
 
@@ -53,6 +66,8 @@ const getUsers = async (req,res)=>{
             
 
     }catch(err){
+
+                console.log(err);
 
                 // Handle errors and return an error response
                 const error = new Error(err.message)
